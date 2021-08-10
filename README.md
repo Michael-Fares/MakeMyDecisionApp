@@ -98,7 +98,17 @@ See tables 20 and 21 in the google doc for examples
 
 
 
-# Steps to create a DB and connect to it
+# Steps I followed to create a DB and connect to it 
+ 1. Accessed and started my first-instance on cloud.google.com
+ 2. Under "databases", I created a new database called "MakeMyDecisionDB"
+ 3. In mySql Workbench, I connected to the database with the following paramaters:
+ Connection Name: MakeMyDecisionDB
+ Connection Method: Standard (TCP/IP)
+ Hostname: 34.69.1.11 (IP address of google virtual machine first-instance)
+ Username: root
+ Password: in keychain
+ Default Schema: MakeMyDecisionDB
+
 
 # Table initialization: please see the file initialization.sql in the repo
 
