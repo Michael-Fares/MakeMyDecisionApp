@@ -30,7 +30,7 @@ CREATE TABLE Options (
 CREATE TABLE Criteria (
   criterion_id INT NOT NULL AUTO_INCREMENT,
   decision_id INT,
-  ctiterion_text VARCHAR(100),
+  criterion_text VARCHAR(100),
   criterion_importance TINYINT,
   PRIMARY KEY (criterion_id),
   FOREIGN KEY (decision_id) REFERENCES Decisions(decision_id)
