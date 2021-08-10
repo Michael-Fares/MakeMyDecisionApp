@@ -95,3 +95,11 @@ See tables 20 and 21 in the google doc for examples
 
 
 # ERD diagram: Please find included in this repository an ERD diagram for this app.
+
+
+
+# Steps to create a DB and connect to it
+
+# Table initialization: please see the file initialization.sql in the repo
+
+# seeding database with data: Please see the individual seed sql files with sample data for each table
