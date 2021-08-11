@@ -57,21 +57,21 @@ Since the app involves ranking each unique option entered in a decision based on
 
 
 
-So for example, a decision with 3 options and 4 criteria will have a total of 12 unique rankings, and the **Options-Criteria-Rankings** join table for such a decision will look something like this:
+So for example, a decision with 3 options and 4 criteria will have a total of 12 unique rankings, and the **Options-Criteria-Rankings** join table for such a decision will look something like this, where the option_id and criterion_id from items 3 and 4 above respectively will be used two foreign keys in this table that form one composite primary key.
 
-ranking_id (PK) Options (FK)   Criteria (FK)       Option_Rank_On_Criterion (*See below for where these 1-5 rankings come from*)
-    1       option 1            criteria 1                      4
-    2       option 1            criteria 2                      5
-    3       option 1            criteria 3                      1
-    4       option 1            criteria 4                      2
-    5       option 2            criteria 1                      3
-    6       option 2            criteria 2                      5
-    7       option 2            criteria 3                      1
-    8       option 2            criteria 4                      3
-    9       option 3            criteria 1                      4
-    10       option 3           criteria 2                      4
-    11       option 3           criteria 3                      3
-    12       option 3           criteria 4                      2
+[Composite PK = option_id(FK), criterion_id,(FK)]                  Option_Rank_On_Criterion (*See below for where these 1-5 rankings come from*)
+    1,1       (option 1      ranked on    criteria 1)                      4
+    1,2       (option 1      ranked on    criteria 2)                      5
+    1,3       (option 1      ranked on    criteria 3)                      1
+    1,4       (option 1      ranked on    criteria 4)                      2
+    1,1       (option 2      ranked on    criteria 1)                      3
+    2,2       (option 2      ranked on    criteria 2)                      5
+    2,3       (option 2      ranked on    criteria 3)                      1
+    2,4       (option 2      ranked on    criteria 4)                      3
+    3,1       (option 3      ranked on    criteria 1)                      4
+    3,2       (option 3      ranked on    criteria 2)                      4
+    3,3       (option 3      ranked on    criteria 3)                      3
+    3,4       (option 3      ranked on    criteria 4)                      2
 
 *Option_Rank_On_Criterion*
 Similarly for these rankings, The front-end will involve five buttons from frowny face to smilely face the user can click on to indicate his/her unique rating for each option based on each criterion, but this will translate to a quantitative 1 to 5 scale in the database on the back end, as such:

@@ -36,12 +36,11 @@ CREATE TABLE Criteria (
   FOREIGN KEY (decision_id) REFERENCES Decisions(decision_id)
 );
 
+/* Join table where the the two foreign keys criterion_id and option_id form a composite primary key */
 CREATE TABLE Options_Criteria_Rankings (
-  ranking_id INT NOT NULL AUTO_INCREMENT,
-  option_id INT,
-  criterion_id INT,
+  option_id INT REFERENCES Options(option_id),
+  criterion_id INT REFERENCES Criteria(criterion_id),
   option_rank_on_criterion TINYINT,
-  PRIMARY KEY (ranking_id),
-  FOREIGN KEY (option_id) REFERENCES Options(option_id),
-  FOREIGN KEY (criterion_id) REFERENCES Criteria(criterion_id)
+  PRIMARY KEY (option_id, criterion_id)
 );
+
