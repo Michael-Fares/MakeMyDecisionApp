@@ -49,15 +49,15 @@ Next, for each **Decision** the user is then able to enter the particular-real w
 
 Relationship: **Similarly the relationship between decisions and options is one to many.**
 
-5. **Options-Criteria-Rankings** (Join table to resolve a many to many relationship among options and criteria that exist for each decision)
+5. **Rankings** (Join table to resolve a many to many relationship among options and criteria that exist for each decision)
 
 Finally, the user is able to give a unique ranking to each option based on each criterion he/she entered in step 3 above.
 
-Since the app involves ranking each unique option entered in a decision based on each unique criterion entered for that decision, this means criteria and options have a many to many relatoinship. This many to many relationship is resolved by the rankings taking place via a join table called **Options-Criteria-Rankings** where the primary key ids from the options table and criteria table are stores as foreign keys. The primary key for this join table is ranking_id, so there can be a unique record for the ranking of each option based each criteria, where the number of unique records will equal the number of criteria times the number of options involved in any given decision. 
+Since the app involves ranking each unique option entered in a decision based on each unique criterion entered for that decision, this means criteria and options have a many to many relatoinship. This many to many relationship is resolved by the rankings taking place via a join table called **Rankings** where the primary key ids from the options table and criteria table are stores as foreign keys. The primary key for this join table is ranking_id, so there can be a unique record for the ranking of each option based each criteria, where the number of unique records will equal the number of criteria times the number of options involved in any given decision. 
 
 
 
-So for example, a decision with 3 options and 4 criteria will have a total of 12 unique rankings, and the **Options-Criteria-Rankings** join table for such a decision will look something like this, where the option_id and criterion_id from items 3 and 4 above respectively will be used two foreign keys in this table that form one composite primary key.
+So for example, a decision with 3 options and 4 criteria will have a total of 12 unique rankings, and the **Rankings** join table for such a decision will look something like this, where the option_id and criterion_id from items 3 and 4 above respectively will be used two foreign keys in this table that form one composite primary key.
 
 [Composite PK = option_id(FK), criterion_id,(FK)]                  Option_Rank_On_Criterion (*See below for where these 1-5 rankings come from*)
     1,1       (option 1      ranked on    criteria 1)                      4

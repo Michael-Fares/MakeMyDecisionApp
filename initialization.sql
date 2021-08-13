@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS Options_Criteria_Rankings, Criteria, Options, Decisions, Users;
+DROP TABLE IF EXISTS Rankings, Criteria, Options, Decisions, Users;
 
 CREATE TABLE Users (
   user_id INT NOT NULL AUTO_INCREMENT,
@@ -37,7 +37,7 @@ CREATE TABLE Criteria (
 );
 
 /* Join table where the the two foreign keys criterion_id and option_id form a composite primary key */
-CREATE TABLE Options_Criteria_Rankings (
+CREATE TABLE Rankings (
   option_id INT REFERENCES Options(option_id),
   criterion_id INT REFERENCES Criteria(criterion_id),
   option_rank_on_criterion TINYINT,

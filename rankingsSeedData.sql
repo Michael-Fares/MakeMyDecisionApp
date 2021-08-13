@@ -2,7 +2,7 @@
 For simplicity in the dummy data, each decision has 3 options and 4 criteria, with a total of 12 unique option-citeria-rankings
 */
 
-INSERT INTO Options_Criteria_Rankings
+INSERT INTO Rankings
 (option_id, criterion_id, option_rank_on_criterion)
 VALUES
 
