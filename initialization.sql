@@ -1,3 +1,5 @@
+/*REMEBER to add ON DELETE CASCADE in Criteria table, Decisions table, and Options table*/
+
 DROP TABLE IF EXISTS Rankings, Criteria, Options, Decisions, Users;
 
 CREATE TABLE Users (
@@ -15,7 +17,6 @@ CREATE TABLE Decisions (
   decision_text VARCHAR(100),
   PRIMARY KEY (decision_id),
   FOREIGN KEY (user_id) REFERENCES Users(user_id)
-
 );
 
 
